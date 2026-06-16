@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>AR Creaciones | Marketing Digital</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            title: ['Archivo Black', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            marquee: 'marquee 18s linear infinite',
+            float: 'float 4s ease-in-out infinite',
+            pulseGlow: 'pulseGlow 2.8s ease-in-out infinite',
+            rotateSoft: 'rotateSoft 8s ease-in-out infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-16px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 0 rgba(232,255,0,0)' },
+              '50%': { boxShadow: '0 0 55px rgba(232,255,0,.45)' },
+            },
+            rotateSoft: {
+              '0%, 100%': { transform: 'rotate(-2deg)' },
+              '50%': { transform: 'rotate(2deg)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #030303;
+      color: #fff;
+    }
+
+    .mega-title {
+      font-size: clamp(4rem, 13vw, 13rem);
+      line-height: .78;
+      letter-spacing: -0.09em;
+    }
+
+    .outline-text {
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,.9);
+    }
+
+    .glass {
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    .grain::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 90;
+      opacity: .12;
+      background-image: radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px);
+      background-size: 4px 4px;
+      mix-blend-mode: overlay;
+    }
+
+    .hero-aurora {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(232,255,0,.28), transparent 25%),
+        radial-gradient(circle at 85% 15%, rgba(168,85,247,.35), transparent 28%),
+        radial-gradient(circle at 50% 90%, rgba(34,211,238,.20), transparent 30%);
+    }
+
+    .card-3d {
+      transform-style: preserve-3d;
+      transition: transform .45s ease, filter .45s ease;
+    }
+
+    .card-3d:hover {
+      transform: rotateY(12deg) rotateX(6deg) translateY(-18px) scale(1.03);
+      filter: brightness(1.08);
+    }
+
+    .social-bubble {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .social-bubble:nth-child(2) {
+      animation-delay: .4s;
+    }
+
+    .social-bubble:nth-child(3) {
+      animation-delay: .8s;
+    }
+  </style>
+</head>
+
+<body class="grain overflow-x-hidden">
+
+  <!-- GLOBOS REDES -->
+  <div class="fixed right-4 bottom-5 z-50 flex flex-col gap-3">
+    <a
+      href="https://wa.me/5493513766634"
+      target="_blank"
+      class="social-bubble w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a
+      href="https://instagram.com/"
+      target="_blank"
+      class="social-bubble w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 via-fuchsia-500 to-purple-700 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition"
+    >
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a
+      href="https://facebook.com/"
+      target="_blank"
+      class="social-bubble w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition"
+    >
+      <i class="fab fa-facebook-f"></i>
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen overflow-hidden px-5 md:px-10 flex items-end pb-10 md:pb-16">
+
+    <!-- VIDEO FONDO -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-70">
+      <source src="video/fondo-marketing.mp4" type="video/mp4">
+    </video>
+
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="absolute inset-0 hero-aurora"></div>
+
+    <!-- NAV -->
+    <header class="absolute top-0 left-0 w-full z-30 px-5 md:px-10 py-6 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="img/logo.png" alt="AR Creaciones" class="h-12 md:h-14 w-auto">
+        <span class="hidden sm:block font-black uppercase tracking-tight">AR Creaciones</span>
+      </a>
+
+      <a
+        href="#planes"
+        class="rounded-full bg-white text-black px-6 py-3 text-sm font-black uppercase hover:bg-[#e8ff00] transition"
+      >
+        Ver planes
+      </a>
+    </header>
+
+    <!-- TEXTO HERO -->
+    <div class="relative z-20 w-full">
+      <div class="max-w-7xl mx-auto">
+
+        <p class="mb-5 text-[#e8ff00] uppercase tracking-[0.28em] font-black text-xs md:text-sm">
+          Community manager · Diseño · Reels · Publicidad digital
+        </p>
+
+        <h1 class="font-title mega-title uppercase">
+          Hacemos
+          <span class="block outline-text">marcas</span>
+          <span class="block text-[#e8ff00]">imposibles</span>
+          <span class="block">de ignorar.</span>
+        </h1>
+
+        <div class="mt-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+          <p class="max-w-2xl text-xl md:text-3xl font-black uppercase leading-tight">
+            El mundo avanza. Hacé que tu empresa vaya en la misma dirección.
+          </p>
+
+          <a
+            href="https://wa.me/5493513766634"
+            target="_blank"
+            class="inline-flex justify-center rounded-full bg-[#e8ff00] text-black px-8 py-5 font-black uppercase hover:bg-white transition animate-pulseGlow"
+          >
+            Quiero mover mi marca
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTÓN CLIENTES -->
+  <section class="relative bg-white text-black py-5 overflow-hidden border-y border-black/10">
+    <div class="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+    <div class="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+    <div class="flex w-max animate-marquee items-center">
+      <div class="flex items-center gap-16 px-8">
+        <img src="img/cliente1.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+        <img src="img/cliente2.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+        <img src="img/cliente3.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+        <img src="img/cliente4.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+        <img src="img/cliente5.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+      </div>
+
+      <div class="flex items-center gap-16 px-8">
+        <img src="img/cliente1.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+        <img src="img/cliente2.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+        <img src="img/cliente3.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+        <img src="img/cliente4.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+        <img src="img/cliente5.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section id="planes" class="relative py-20 md:py-28 px-5 md:px-10 bg-[#050505] overflow-hidden">
+    <div class="absolute inset-0 hero-aurora opacity-50"></div>
+
+    <div class="relative max-w-7xl mx-auto">
+
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
+        <div>
+          <p class="text-[#e8ff00] uppercase tracking-[0.28em] font-black text-xs md:text-sm mb-4">
+            Planes AR
+          </p>
+
+          <h2 class="font-title uppercase text-5xl md:text-8xl leading-none tracking-[-0.07em]">
+            Elegí el
+            <span class="block outline-text">impulso.</span>
+          </h2>
+        </div>
+
+        <p class="max-w-md text-white/65 text-lg font-semibold">
+          Tres formas de activar tu presencia digital: redes, diseño y campañas con estética profesional.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7 [perspective:1500px]">
+
+        <!-- PLAN 1 -->
+        <article class="card-3d glass rounded-[2rem] p-4 md:p-5 rotate-[-2deg]">
+          <div class="relative rounded-[1.5rem] overflow-hidden bg-black">
+            <img
+              src="img/plan-community-manager.png"
+              alt="Plan Community Manager"
+              class="w-full h-auto object-cover"
+            >
+            <div class="absolute top-4 left-4 rounded-full bg-black/70 px-4 py-2 text-xs font-black uppercase backdrop-blur">
+              Plan 01
+            </div>
+          </div>
+
+          <div class="pt-5">
+            <h3 class="font-title text-3xl md:text-4xl uppercase tracking-tighter">
+              Community Manager
+            </h3>
+            <p class="text-white/55 mt-2">
+              Redes activas, contenido, diseño, reels y presencia constante.
+            </p>
+          </div>
+        </article>
+
+        <!-- PLAN 2 -->
+        <article class="card-3d glass rounded-[2rem] p-4 md:p-5 md:translate-y-10 animate-rotateSoft">
+          <div class="relative rounded-[1.5rem] overflow-hidden bg-black">
+            <img
+              src="img/plan-impulso.png"
+              alt="Plan Impulso"
+              class="w-full h-auto object-cover"
+            >
+            <div class="absolute top-4 left-4 rounded-full bg-[#e8ff00] text-black px-4 py-2 text-xs font-black uppercase">
+              Plan 02
+            </div>
+          </div>
+
+          <div class="pt-5">
+            <h3 class="font-title text-3xl md:text-4xl uppercase tracking-tighter">
+              Plan Impulso
+            </h3>
+            <p class="text-white/55 mt-2">
+              Publicidad, reels y diseño para empujar tu marca con más fuerza.
+            </p>
+          </div>
+        </article>
+
+        <!-- PLAN 3 -->
+        <article class="card-3d glass rounded-[2rem] p-4 md:p-5 rotate-[2deg]">
+          <div class="relative rounded-[1.5rem] overflow-hidden bg-black">
+            <img
+              src="img/plan-diseno-grafico.png"
+              alt="Plan Diseño Gráfico"
+              class="w-full h-auto object-cover"
+            >
+            <div class="absolute top-4 left-4 rounded-full bg-black/70 px-4 py-2 text-xs font-black uppercase backdrop-blur">
+              Plan 03
+            </div>
+          </div>
+
+          <div class="pt-5">
+            <h3 class="font-title text-3xl md:text-4xl uppercase tracking-tighter">
+              Diseño Gráfico
+            </h3>
+            <p class="text-white/55 mt-2">
+              Flyers, piezas visuales, identidad y contenido gráfico para redes.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="mt-20 rounded-[2rem] bg-white text-black p-8 md:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <h3 class="font-title uppercase text-4xl md:text-6xl leading-none tracking-[-0.06em]">
+          Tu marca puede verse mejor.
+        </h3>
+
+        <a
+          href="https://wa.me/5493513766634"
+          target="_blank"
+          class="rounded-full bg-black text-white px-8 py-5 font-black uppercase text-center hover:bg-[#e8ff00] hover:text-black transition"
+        >
+          Consultar por WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
