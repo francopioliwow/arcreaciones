@@ -29,16 +29,11 @@
             body: ['Inter', 'sans-serif'],
           },
           animation: {
-            marquee: 'marquee 18s linear infinite',
             float: 'float 4s ease-in-out infinite',
             pulseGlow: 'pulseGlow 2.8s ease-in-out infinite',
             rotateSoft: 'rotateSoft 8s ease-in-out infinite',
           },
           keyframes: {
-            marquee: {
-              '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(-50%)' },
-            },
             float: {
               '0%, 100%': { transform: 'translateY(0)' },
               '50%': { transform: 'translateY(-16px)' },
@@ -65,9 +60,9 @@
     }
 
     .mega-title {
-      font-size: clamp(4rem, 13vw, 13rem);
-      line-height: .78;
-      letter-spacing: -0.09em;
+      font-size: clamp(3.2rem, 12.5vw, 13rem);
+      line-height: .80;
+      letter-spacing: -0.085em;
     }
 
     .outline-text {
@@ -121,6 +116,65 @@
     .social-bubble:nth-child(3) {
       animation-delay: .8s;
     }
+
+    .logo-marquee {
+      display: flex;
+      width: max-content;
+      animation: logoMarquee 34s linear infinite;
+    }
+
+    .logo-sequence {
+      display: flex;
+      align-items: center;
+      gap: clamp(3rem, 6vw, 7rem);
+      padding-right: clamp(3rem, 6vw, 7rem);
+      height: 100%;
+    }
+
+    .client-logo {
+      height: 90%;
+      width: auto;
+      max-width: none;
+      object-fit: contain;
+      flex-shrink: 0;
+      opacity: .95;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .client-logo:hover {
+      opacity: 1;
+      transform: scale(1.06);
+    }
+
+    @keyframes logoMarquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mega-title {
+        font-size: clamp(3.05rem, 15vw, 4.5rem);
+        line-height: .86;
+        letter-spacing: -0.075em;
+      }
+
+      .outline-text {
+        -webkit-text-stroke: 1px rgba(255,255,255,.9);
+      }
+
+      .client-logo {
+        height: 86%;
+      }
+
+      .logo-sequence {
+        gap: 3rem;
+        padding-right: 3rem;
+      }
+    }
   </style>
 </head>
 
@@ -131,30 +185,30 @@
     <a
       href="https://wa.me/5493513766634"
       target="_blank"
-      class="social-bubble w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition"
+      class="social-bubble w-12 h-12 md:w-14 md:h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-xl md:text-2xl shadow-2xl hover:scale-110 transition"
     >
       <i class="fab fa-whatsapp"></i>
     </a>
 
     <a
-      href="https://instagram.com/"
+      href="https://www.instagram.com/ar_creacionesok"
       target="_blank"
-      class="social-bubble w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 via-fuchsia-500 to-purple-700 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition"
+      class="social-bubble w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-orange-400 via-fuchsia-500 to-purple-700 text-white flex items-center justify-center text-xl md:text-2xl shadow-2xl hover:scale-110 transition"
     >
       <i class="fab fa-instagram"></i>
     </a>
 
     <a
-      href="https://facebook.com/"
+      href="https://www.facebook.com/ar.creacionesok/"
       target="_blank"
-      class="social-bubble w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition"
+      class="social-bubble w-12 h-12 md:w-14 md:h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl md:text-2xl shadow-2xl hover:scale-110 transition"
     >
       <i class="fab fa-facebook-f"></i>
     </a>
   </div>
 
   <!-- HERO -->
-  <section class="relative min-h-screen overflow-hidden px-5 md:px-10 flex items-end pb-10 md:pb-16">
+  <section class="relative min-h-[88svh] md:min-h-screen overflow-hidden px-5 md:px-10 flex items-center md:items-end pt-24 md:pt-32 pb-8 md:pb-16">
 
     <!-- VIDEO FONDO -->
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-70">
@@ -165,7 +219,7 @@
     <div class="absolute inset-0 hero-aurora"></div>
 
     <!-- NAV -->
-    <header class="absolute top-0 left-0 w-full z-30 px-5 md:px-10 py-6 flex items-center justify-between">
+    <header class="absolute top-0 left-0 w-full z-30 px-5 md:px-10 py-5 md:py-6 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
         <img src="img/logo.png" alt="AR Creaciones" class="h-12 md:h-14 w-auto">
         <span class="hidden sm:block font-black uppercase tracking-tight">AR Creaciones</span>
@@ -173,7 +227,7 @@
 
       <a
         href="#planes"
-        class="rounded-full bg-white text-black px-6 py-3 text-sm font-black uppercase hover:bg-[#e8ff00] transition"
+        class="rounded-full bg-white text-black px-5 md:px-6 py-3 text-xs md:text-sm font-black uppercase hover:bg-[#e8ff00] transition"
       >
         Ver planes
       </a>
@@ -183,7 +237,7 @@
     <div class="relative z-20 w-full">
       <div class="max-w-7xl mx-auto">
 
-        <p class="mb-5 text-[#e8ff00] uppercase tracking-[0.28em] font-black text-xs md:text-sm">
+        <p class="mb-4 md:mb-5 text-[#e8ff00] uppercase tracking-[0.22em] md:tracking-[0.28em] font-black text-[10px] md:text-sm">
           Community manager · Diseño · Reels · Publicidad digital
         </p>
 
@@ -194,15 +248,15 @@
           <span class="block">de ignorar.</span>
         </h1>
 
-        <div class="mt-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-          <p class="max-w-2xl text-xl md:text-3xl font-black uppercase leading-tight">
+        <div class="mt-6 md:mt-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-8">
+          <p class="max-w-2xl text-lg md:text-3xl font-black uppercase leading-tight">
             El mundo avanza. Hacé que tu empresa vaya en la misma dirección.
           </p>
 
           <a
             href="https://wa.me/5493513766634"
             target="_blank"
-            class="inline-flex justify-center rounded-full bg-[#e8ff00] text-black px-8 py-5 font-black uppercase hover:bg-white transition animate-pulseGlow"
+            class="inline-flex justify-center rounded-full bg-[#e8ff00] text-black px-7 md:px-8 py-4 md:py-5 font-black uppercase hover:bg-white transition animate-pulseGlow"
           >
             Quiero mover mi marca
           </a>
@@ -213,26 +267,42 @@
   </section>
 
   <!-- LISTÓN CLIENTES -->
-  <section class="relative bg-white text-black py-5 overflow-hidden border-y border-black/10">
-    <div class="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
-    <div class="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+  <section class="relative bg-black text-white h-28 md:h-40 overflow-hidden border-y border-white/10 flex items-center">
+    <div class="absolute left-0 top-0 h-full w-16 md:w-28 bg-gradient-to-r from-black to-transparent z-10"></div>
+    <div class="absolute right-0 top-0 h-full w-16 md:w-28 bg-gradient-to-l from-black to-transparent z-10"></div>
 
-    <div class="flex w-max animate-marquee items-center">
-      <div class="flex items-center gap-16 px-8">
-        <img src="img/cliente1.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
-        <img src="img/cliente2.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
-        <img src="img/cliente3.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
-        <img src="img/cliente4.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
-        <img src="img/cliente5.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+    <div class="logo-marquee h-full">
+
+      <!-- SECUENCIA 1 -->
+      <div class="logo-sequence">
+        <img src="img/cliente1.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente2.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente3.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente4.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente5.png" alt="Cliente" class="client-logo">
+
+        <img src="img/cliente1.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente2.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente3.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente4.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente5.png" alt="Cliente" class="client-logo">
       </div>
 
-      <div class="flex items-center gap-16 px-8">
-        <img src="img/cliente1.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
-        <img src="img/cliente2.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
-        <img src="img/cliente3.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
-        <img src="img/cliente4.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
-        <img src="img/cliente5.png" alt="Cliente" class="h-11 w-auto grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition">
+      <!-- SECUENCIA 2 REPETIDA PARA QUE NO CORTE NUNCA -->
+      <div class="logo-sequence" aria-hidden="true">
+        <img src="img/cliente1.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente2.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente3.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente4.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente5.png" alt="Cliente" class="client-logo">
+
+        <img src="img/cliente1.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente2.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente3.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente4.png" alt="Cliente" class="client-logo">
+        <img src="img/cliente5.png" alt="Cliente" class="client-logo">
       </div>
+
     </div>
   </section>
 
