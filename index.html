@@ -211,7 +211,17 @@
   <section class="relative min-h-[88svh] md:min-h-screen overflow-hidden px-5 md:px-10 flex items-center md:items-end pt-24 md:pt-32 pb-8 md:pb-16">
 
     <!-- VIDEO FONDO -->
-    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-70">
+    <video
+      id="heroVideo"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+      poster="img/poster-video.jpg"
+      class="absolute inset-0 w-full h-full object-cover opacity-70"
+    >
       <source src="video/fondo-marketing.mp4" type="video/mp4">
     </video>
 
@@ -418,6 +428,24 @@
 
     </div>
   </section>
+<script>
+  const heroVideo = document.getElementById('heroVideo');
 
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.playsInline = true;
+
+    const playVideo = () => {
+      heroVideo.play().catch(() => {
+        console.log('El autoplay fue bloqueado por el navegador.');
+      });
+    };
+
+    window.addEventListener('load', playVideo);
+    document.addEventListener('touchstart', playVideo, { once: true });
+    document.addEventListener('click', playVideo, { once: true });
+  }
+</script>
 </body>
 </html>
