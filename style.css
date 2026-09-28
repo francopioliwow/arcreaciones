@@ -384,3 +384,406 @@ footer a:hover { color: #dca0ff; }
   .plan-card-main { transform: perspective(1100px) translateY(24px) rotateX(var(--card-rx, 0deg)) rotateY(var(--card-ry, 0deg)); }
   .plan-card-main:hover { transform: perspective(1100px) translateY(15px) rotateX(var(--card-rx, 0deg)) rotateY(var(--card-ry, 0deg)); }
 }
+
+/* =====================================================
+   HERO - NUEVA ESTRUCTURA
+===================================================== */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 86px);
+  overflow: hidden;
+  padding: 70px 4vw 40px;
+}
+
+/* Las dos columnas principales */
+.hero-layout {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  max-width: 1680px;
+  min-height: calc(100vh - 190px);
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(520px, 0.92fr) minmax(520px, 1.08fr);
+  align-items: center;
+  gap: 40px;
+}
+
+
+/* =====================================================
+   IZQUIERDA
+===================================================== */
+
+.hero-copy {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+/* TÍTULO */
+
+.hero-copy h1 {
+  position: relative;
+
+  margin: 0;
+
+  max-width: 780px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(4.6rem, 6.4vw, 8.4rem);
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+
+  font-weight: 800;
+
+  color: #f5f1f7;
+}
+
+.hero-copy h1 span,
+.hero-copy h1 em {
+  display: block;
+}
+
+.hero-copy h1 span {
+  color: #f5f1f7;
+}
+
+.hero-copy h1 em {
+  margin-top: 10px;
+
+  font-style: normal;
+
+  background: linear-gradient(
+    90deg,
+    #f2b8ff 0%,
+    #df75f3 42%,
+    #d84ce5 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* TEXTO GRIS — AHORA QUEDA ABAJO DEL TÍTULO */
+
+.hero-lead {
+  position: relative !important;
+
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  width: 100%;
+  max-width: 650px;
+
+  margin: 32px 0 0;
+
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  line-height: 1.75;
+
+  color: rgba(245, 241, 247, 0.68);
+}
+
+
+/* CHIPS */
+
+.service-chips {
+  position: relative !important;
+
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+
+/* NOTA */
+
+.hero-note {
+  position: relative !important;
+
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  max-width: 500px;
+
+  margin-top: 28px;
+}
+
+
+/* =====================================================
+   ARIANA
+===================================================== */
+
+.hero-character {
+  position: relative !important;
+
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  transform: none !important;
+
+  width: 100%;
+  height: min(780px, 78vh);
+  min-height: 610px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  align-self: end;
+
+  z-index: 6;
+}
+
+
+/* CONTENEDOR DEL RIG */
+
+.ariana-scene {
+  position: relative;
+
+  width: min(100%, 700px);
+  height: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+
+/* PERSONAJE */
+
+.ariana-stage {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+
+/*
+  IMPORTANTE:
+  dejamos que tanto la imagen fallback como el canvas
+  ocupen exactamente el mismo espacio.
+*/
+
+.ariana-fallback,
+.ariana-canvas {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: auto;
+  height: min(760px, 76vh);
+  max-width: none;
+
+  transform: translateX(-50%);
+
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+
+/* Si el rig activa el canvas, ambos quedan perfectamente superpuestos */
+
+.ariana-canvas {
+  z-index: 2;
+}
+
+.ariana-fallback {
+  z-index: 1;
+}
+
+
+/* =====================================================
+   ELEMENTOS FLOTANTES
+===================================================== */
+
+.floating-note-top {
+  position: absolute;
+  top: 24%;
+  right: 5%;
+  z-index: 10;
+}
+
+.floating-card {
+  position: absolute;
+  right: 0;
+  bottom: 20%;
+  z-index: 10;
+}
+
+.signature-note {
+  position: absolute;
+  right: 6%;
+  bottom: 8%;
+  z-index: 10;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .hero {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .hero-layout {
+    grid-template-columns: minmax(430px, 1fr) minmax(400px, 0.9fr);
+    gap: 10px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(4rem, 7vw, 6.5rem);
+  }
+
+  .hero-character {
+    height: 680px;
+    min-height: 560px;
+  }
+
+  .ariana-fallback,
+  .ariana-canvas {
+    height: min(650px, 68vh);
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: auto;
+    padding: 55px 22px 0;
+    overflow: hidden;
+  }
+
+  .hero-layout {
+    display: flex;
+    flex-direction: column;
+
+    min-height: auto;
+
+    gap: 25px;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+
+    font-size: clamp(3.5rem, 14vw, 6rem);
+  }
+
+  .hero-lead {
+    max-width: 600px;
+    margin-top: 25px;
+  }
+
+  .service-chips {
+    margin-top: 24px;
+  }
+
+  .hero-note {
+    margin-top: 24px;
+  }
+
+  .hero-character {
+    width: 100%;
+    height: 620px;
+    min-height: 0;
+
+    margin-top: 5px;
+
+    align-self: center;
+  }
+
+  .ariana-fallback,
+  .ariana-canvas {
+    height: 610px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE CHICO
+===================================================== */
+
+@media (max-width: 560px) {
+
+  .hero {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.2rem, 15vw, 4.7rem);
+    line-height: 0.93;
+  }
+
+  .hero-lead {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .hero-character {
+    height: 510px;
+  }
+
+  .ariana-fallback,
+  .ariana-canvas {
+    height: 500px;
+  }
+
+  .floating-card,
+  .signature-note {
+    display: none;
+  }
+}

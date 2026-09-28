@@ -1,241 +1,1057 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#08050b" />
-  <title>AR Creaciones | Diseño, contenido y presencia digital</title>
-  <meta name="description" content="AR Creaciones: diseño, contenido, redes y presencia digital para marcas que quieren destacar." />
 
+  <meta name="theme-color" content="#08050b" />
+
+  <title>AR Creaciones | Diseño, contenido y presencia digital</title>
+
+  <meta
+    name="description"
+    content="AR Creaciones: diseño, contenido, redes y presencia digital para marcas que quieren destacar."
+  />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <!-- CSS principal -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Ariana Rig -->
   <link rel="stylesheet" href="assets/ariana/rig.css" />
-  <link rel="preload" href="assets/ariana/source.webp" as="image">
+
+  <!-- Precarga personaje -->
+  <link
+    rel="preload"
+    href="assets/ariana/source.webp"
+    as="image"
+  >
 </head>
+
+
 <body>
+
+  <!-- Ruido / textura -->
   <div class="page-noise" aria-hidden="true"></div>
 
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
   <header class="site-header" id="inicio">
-    <a class="brand" href="#inicio" aria-label="AR Creaciones - Inicio">
-      <img src="img/logo-ar.webp" alt="AR Creaciones" />
+
+    <a
+      class="brand"
+      href="#inicio"
+      aria-label="AR Creaciones - Inicio"
+    >
+      <img
+        src="img/logo-ar.webp"
+        alt="AR Creaciones"
+      >
     </a>
 
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a class="active" href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#planes">Planes</a>
-      <a href="#contacto">Contacto</a>
+
+    <nav
+      class="nav-links"
+      aria-label="Navegación principal"
+    >
+
+      <a
+        class="active"
+        href="#inicio"
+      >
+        Inicio
+      </a>
+
+      <a href="#servicios">
+        Servicios
+      </a>
+
+      <a href="#planes">
+        Planes
+      </a>
+
+      <a href="#contacto">
+        Contacto
+      </a>
+
     </nav>
 
-    <a class="nav-cta" href="https://wa.me/5493513766634" target="_blank" rel="noopener noreferrer">
-      <i class="fa-regular fa-message" aria-hidden="true"></i>
-      <span>Hablemos</span>
+
+    <a
+      class="nav-cta"
+      href="https://wa.me/5493513766634"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <i
+        class="fa-regular fa-message"
+        aria-hidden="true"
+      ></i>
+
+      <span>
+        Hablemos
+      </span>
+
     </a>
+
   </header>
 
+
+
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-grid"></div>
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
-      <div class="orbit orbit-one" aria-hidden="true"></div>
-      <div class="orbit orbit-two" aria-hidden="true"></div>
 
-        <h1 id="hero-title">
-          El mundo avanza
-          <span>hace que tu empresa</span>
-          <em>vaya en la misma dirección</em>
-        </h1>
 
-        <p class="hero-lead">
-          Diseño, contenido y presencia digital para marcas que quieren destacar.
-          En AR Creaciones transformamos ideas en experiencias visuales que conectan.
-        </p>
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-        <div class="service-chips" aria-label="Servicios destacados">
-          <span><i class="fa-solid fa-pen-nib"></i> Diseño</span>
-          <span><i class="fa-regular fa-gem"></i> Branding</span>
-          <span><i class="fa-solid fa-video"></i> Contenido</span>
-          <span><i class="fa-solid fa-share-nodes"></i> Redes</span>
-          <span><i class="fa-solid fa-bullhorn"></i> Publicidad</span>
-        </div>
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+    >
 
-        <div class="hero-note">
-          <span class="note-line"></span>
-          <p><strong>Creatividad con intención.</strong> Nada de plantillas que parecen todas iguales.</p>
-        </div>
-      </div>
+      <!-- Fondo -->
 
-      <div class="hero-character" id="characterArea" aria-label="Personaje interactivo de AR Creaciones">
-        <div class="character-halo" aria-hidden="true"></div>
-        <div class="character-ring" aria-hidden="true"></div>
+      <div
+        class="hero-grid"
+        aria-hidden="true"
+      ></div>
 
-        <div class="ariana-scene">
-          <button type="button" class="ariana-stage" data-ariana aria-label="Saludar a Ariana" aria-describedby="arianaStatus">
-            <img class="ariana-fallback" src="assets/ariana/source.webp" alt="Ariana, el personaje de AR Creaciones" width="900" height="1125" draggable="false">
-            <canvas class="ariana-canvas" width="1000" height="1180" aria-hidden="true"></canvas>
-          </button>
-          <div class="ariana-controls">
-            <p id="arianaStatus" aria-live="polite">Ariana · AR Creaciones</p>
-            <div>
-              <button type="button" id="arianaGreet">Saludar <span aria-hidden="true">↗</span></button>
-              <button type="button" id="arianaPause" aria-pressed="false" aria-label="Pausar movimiento de Ariana">Pausar</button>
-            </div>
+      <div
+        class="hero-glow hero-glow-one"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="hero-glow hero-glow-two"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="orbit orbit-one"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="orbit orbit-two"
+        aria-hidden="true"
+      ></div>
+
+
+
+      <!-- ===================================================
+           CONTENIDO PRINCIPAL HERO
+      ==================================================== -->
+
+      <div class="hero-layout">
+
+
+        <!-- =================================================
+             COLUMNA IZQUIERDA
+        ================================================== -->
+
+        <div class="hero-copy">
+
+
+          <!-- TÍTULO -->
+
+          <h1 id="hero-title">
+
+            El mundo avanza
+
+            <span>
+              hace que tu empresa
+            </span>
+
+            <em>
+              vaya en la misma dirección
+            </em>
+
+          </h1>
+
+
+
+          <!-- TEXTO DEBAJO DEL TÍTULO -->
+
+          <p class="hero-lead">
+
+            Diseño, contenido y presencia digital para marcas que quieren destacar.
+
+            En AR Creaciones transformamos ideas en experiencias visuales que conectan.
+
+          </p>
+
+
+
+          <!-- SERVICIOS RÁPIDOS -->
+
+          <div
+            class="service-chips"
+            aria-label="Servicios destacados"
+          >
+
+            <span>
+              <i class="fa-solid fa-pen-nib"></i>
+              Diseño
+            </span>
+
+            <span>
+              <i class="fa-regular fa-gem"></i>
+              Branding
+            </span>
+
+            <span>
+              <i class="fa-solid fa-video"></i>
+              Contenido
+            </span>
+
+            <span>
+              <i class="fa-solid fa-share-nodes"></i>
+              Redes
+            </span>
+
+            <span>
+              <i class="fa-solid fa-bullhorn"></i>
+              Publicidad
+            </span>
+
           </div>
-          <noscript><p class="ariana-noscript">Activá JavaScript para interactuar con Ariana.</p></noscript>
-        </div>
 
-        <div class="floating-note floating-note-top" aria-hidden="true">
-          <span>ideas</span>
-          <span>diseño</span>
-          <span>resultados</span>
-          <b>♡</b>
-        </div>
 
-        <div class="floating-card" aria-hidden="true">
-          <span class="floating-icon"><i class="fa-solid fa-chart-line"></i></span>
-          <p>Tu idea<br>puede llegar<br><strong>más lejos.</strong></p>
-        </div>
 
-        <div class="signature-note" aria-hidden="true">creatividad<br>que impulsa marcas ♡</div>
+          <!-- NOTA -->
+
+          <div class="hero-note">
+
+            <span class="note-line"></span>
+
+            <p>
+              <strong>
+                Creatividad con intención.
+              </strong>
+
+              Nada de plantillas que parecen todas iguales.
+            </p>
+
+          </div>
+
+
+        </div>
+        <!-- /hero-copy -->
+
+
+
+        <!-- =================================================
+             COLUMNA DERECHA - ARIANA
+        ================================================== -->
+
+        <div
+          class="hero-character"
+          id="characterArea"
+          aria-label="Personaje interactivo de AR Creaciones"
+        >
+
+
+          <!-- Decoración -->
+
+          <div
+            class="character-halo"
+            aria-hidden="true"
+          ></div>
+
+          <div
+            class="character-ring"
+            aria-hidden="true"
+          ></div>
+
+
+
+          <!-- Ariana -->
+
+          <div class="ariana-scene">
+
+
+            <button
+              type="button"
+              class="ariana-stage"
+              data-ariana
+              aria-label="Saludar a Ariana"
+              aria-describedby="arianaStatus"
+            >
+
+              <!-- Imagen de respaldo -->
+
+              <img
+                class="ariana-fallback"
+                src="assets/ariana/source.webp"
+                alt="Ariana, el personaje de AR Creaciones"
+                width="900"
+                height="1125"
+                draggable="false"
+              >
+
+
+              <!-- Canvas del Rig -->
+
+              <canvas
+                class="ariana-canvas"
+                width="1000"
+                height="1180"
+                aria-hidden="true"
+              ></canvas>
+
+            </button>
+
+
+
+            <!-- CONTROLES -->
+
+            <div class="ariana-controls">
+
+              <p
+                id="arianaStatus"
+                aria-live="polite"
+              >
+                Ariana · AR Creaciones
+              </p>
+
+
+              <div>
+
+                <button
+                  type="button"
+                  id="arianaGreet"
+                >
+
+                  Saludar
+
+                  <span aria-hidden="true">
+                    ↗
+                  </span>
+
+                </button>
+
+
+                <button
+                  type="button"
+                  id="arianaPause"
+                  aria-pressed="false"
+                  aria-label="Pausar movimiento de Ariana"
+                >
+                  Pausar
+                </button>
+
+              </div>
+
+            </div>
+
+
+
+            <noscript>
+
+              <p class="ariana-noscript">
+                Activá JavaScript para interactuar con Ariana.
+              </p>
+
+            </noscript>
+
+
+          </div>
+          <!-- /ariana-scene -->
+
+
+
+          <!-- NOTA FLOTANTE -->
+
+          <div
+            class="floating-note floating-note-top"
+            aria-hidden="true"
+          >
+
+            <span>
+              ideas
+            </span>
+
+            <span>
+              diseño
+            </span>
+
+            <span>
+              resultados
+            </span>
+
+            <b>
+              ♡
+            </b>
+
+          </div>
+
+
+
+          <!-- TARJETA FLOTANTE -->
+
+          <div
+            class="floating-card"
+            aria-hidden="true"
+          >
+
+            <span class="floating-icon">
+
+              <i class="fa-solid fa-chart-line"></i>
+
+            </span>
+
+            <p>
+
+              Tu idea
+              <br>
+
+              puede llegar
+              <br>
+
+              <strong>
+                más lejos.
+              </strong>
+
+            </p>
+
+          </div>
+
+
+
+          <!-- FIRMA -->
+
+          <div
+            class="signature-note"
+            aria-hidden="true"
+          >
+
+            creatividad
+            <br>
+            que impulsa marcas ♡
+
+          </div>
+
+
+        </div>
+        <!-- /hero-character -->
+
+
       </div>
+      <!-- /hero-layout -->
 
-      <div class="scroll-hint" aria-hidden="true">
-        <span>Explorá</span>
+
+
+      <!-- SCROLL -->
+
+      <div
+        class="scroll-hint"
+        aria-hidden="true"
+      >
+
+        <span>
+          Explorá
+        </span>
+
         <i class="fa-solid fa-arrow-down"></i>
+
       </div>
+
+
     </section>
 
-    <section class="clients-strip" aria-label="Clientes">
+
+
+    <!-- =====================================================
+         CLIENTES
+    ====================================================== -->
+
+    <section
+      class="clients-strip"
+      aria-label="Clientes"
+    >
+
       <div class="marquee-track">
+
+
         <div class="marquee-set">
-          <img src="img/cliente1.png" alt="Cliente de AR Creaciones">
-          <img src="img/cliente2.png" alt="Cliente de AR Creaciones">
-          <img src="img/cliente3.png" alt="Cliente de AR Creaciones">
-          <img src="img/cliente4.png" alt="Cliente de AR Creaciones">
-          <img src="img/cliente5.png" alt="Cliente de AR Creaciones">
+
+          <img
+            src="img/cliente1.png"
+            alt="Cliente de AR Creaciones"
+          >
+
+          <img
+            src="img/cliente2.png"
+            alt="Cliente de AR Creaciones"
+          >
+
+          <img
+            src="img/cliente3.png"
+            alt="Cliente de AR Creaciones"
+          >
+
+          <img
+            src="img/cliente4.png"
+            alt="Cliente de AR Creaciones"
+          >
+
+          <img
+            src="img/cliente5.png"
+            alt="Cliente de AR Creaciones"
+          >
+
         </div>
-        <div class="marquee-set" aria-hidden="true">
-          <img src="img/cliente1.png" alt="">
-          <img src="img/cliente2.png" alt="">
-          <img src="img/cliente3.png" alt="">
-          <img src="img/cliente4.png" alt="">
-          <img src="img/cliente5.png" alt="">
+
+
+
+        <div
+          class="marquee-set"
+          aria-hidden="true"
+        >
+
+          <img
+            src="img/cliente1.png"
+            alt=""
+          >
+
+          <img
+            src="img/cliente2.png"
+            alt=""
+          >
+
+          <img
+            src="img/cliente3.png"
+            alt=""
+          >
+
+          <img
+            src="img/cliente4.png"
+            alt=""
+          >
+
+          <img
+            src="img/cliente5.png"
+            alt=""
+          >
+
         </div>
+
+
       </div>
+
     </section>
 
-    <section class="services" id="servicios">
+
+
+    <!-- =====================================================
+         SERVICIOS
+    ====================================================== -->
+
+    <section
+      class="services"
+      id="servicios"
+    >
+
+
       <div class="section-heading">
+
+
         <div>
-          <p class="section-kicker">Lo que hacemos</p>
-          <h2>Una marca no necesita<br><span>más ruido.</span> Necesita identidad.</h2>
+
+          <p class="section-kicker">
+            Lo que hacemos
+          </p>
+
+
+          <h2>
+
+            Una marca no necesita
+            <br>
+
+            <span>
+              más ruido.
+            </span>
+
+            Necesita identidad.
+
+          </h2>
+
         </div>
+
+
+
         <p class="section-copy">
-          Pensamos cada pieza para que tu negocio se vea coherente, profesional y reconocible en cada punto de contacto.
+
+          Pensamos cada pieza para que tu negocio se vea coherente,
+          profesional y reconocible en cada punto de contacto.
+
         </p>
+
+
       </div>
+
+
 
       <div class="services-grid">
+
+
+        <!-- 01 -->
+
         <article class="service-card featured">
-          <span class="service-number">01</span>
+
+          <span class="service-number">
+            01
+          </span>
+
+
           <i class="fa-solid fa-object-group"></i>
-          <h3>Diseño & Branding</h3>
-          <p>Identidad visual, piezas gráficas y una estética que tenga personalidad propia.</p>
+
+
+          <h3>
+            Diseño & Branding
+          </h3>
+
+
+          <p>
+            Identidad visual, piezas gráficas y una estética que tenga
+            personalidad propia.
+          </p>
+
         </article>
 
+
+
+        <!-- 02 -->
+
         <article class="service-card">
-          <span class="service-number">02</span>
+
+          <span class="service-number">
+            02
+          </span>
+
+
           <i class="fa-solid fa-clapperboard"></i>
-          <h3>Contenido & Reels</h3>
-          <p>Contenido pensado para redes, campañas y formatos que retienen atención.</p>
+
+
+          <h3>
+            Contenido & Reels
+          </h3>
+
+
+          <p>
+            Contenido pensado para redes, campañas y formatos que retienen
+            atención.
+          </p>
+
         </article>
 
+
+
+        <!-- 03 -->
+
         <article class="service-card">
-          <span class="service-number">03</span>
+
+          <span class="service-number">
+            03
+          </span>
+
+
           <i class="fa-solid fa-comments"></i>
-          <h3>Redes Sociales</h3>
-          <p>Planificación, diseño, publicación y una presencia constante que tenga sentido.</p>
+
+
+          <h3>
+            Redes Sociales
+          </h3>
+
+
+          <p>
+            Planificación, diseño, publicación y una presencia constante
+            que tenga sentido.
+          </p>
+
         </article>
 
+
+
+        <!-- 04 -->
+
         <article class="service-card">
-          <span class="service-number">04</span>
+
+          <span class="service-number">
+            04
+          </span>
+
+
           <i class="fa-solid fa-bullseye"></i>
-          <h3>Publicidad Digital</h3>
-          <p>Campañas para llegar a nuevas personas y convertir visibilidad en oportunidades.</p>
+
+
+          <h3>
+            Publicidad Digital
+          </h3>
+
+
+          <p>
+            Campañas para llegar a nuevas personas y convertir visibilidad
+            en oportunidades.
+          </p>
+
         </article>
+
+
       </div>
+
     </section>
 
-    <section class="plans" id="planes">
+
+
+    <!-- =====================================================
+         PLANES
+    ====================================================== -->
+
+    <section
+      class="plans"
+      id="planes"
+    >
+
+
       <div class="section-heading plans-heading">
+
+
         <div>
-          <p class="section-kicker">Planes AR</p>
-          <h2>Elegí cómo querés<br><span>mover tu marca.</span></h2>
+
+          <p class="section-kicker">
+            Planes AR
+          </p>
+
+
+          <h2>
+
+            Elegí cómo querés
+            <br>
+
+            <span>
+              mover tu marca.
+            </span>
+
+          </h2>
+
         </div>
-        <p class="section-copy">Tres propuestas para empezar según lo que tu marca necesite hoy.</p>
+
+
+
+        <p class="section-copy">
+
+          Tres propuestas para empezar según lo que tu marca necesite hoy.
+
+        </p>
+
+
       </div>
+
+
 
       <div class="plans-grid">
+
+
+        <!-- PLAN 1 -->
+
         <article class="plan-card">
-          <div class="plan-image-wrap"><img src="img/plan-community-manager.png" alt="Plan Community Manager"></div>
-          <div class="plan-content">
-            <span>Plan 01</span>
-            <h3>Community Manager</h3>
-            <p>Redes activas, contenido, diseño, reels y presencia constante.</p>
+
+
+          <div class="plan-image-wrap">
+
+            <img
+              src="img/plan-community-manager.png"
+              alt="Plan Community Manager"
+            >
+
           </div>
+
+
+          <div class="plan-content">
+
+            <span>
+              Plan 01
+            </span>
+
+
+            <h3>
+              Community Manager
+            </h3>
+
+
+            <p>
+              Redes activas, contenido, diseño, reels y presencia constante.
+            </p>
+
+          </div>
+
+
         </article>
+
+
+
+        <!-- PLAN 2 -->
 
         <article class="plan-card plan-card-main">
-          <div class="plan-image-wrap"><img src="img/plan-impulso.png" alt="Plan Impulso"></div>
-          <div class="plan-content">
-            <span>Plan 02</span>
-            <h3>Plan Impulso</h3>
-            <p>Publicidad, reels y diseño para darle más fuerza a tu marca.</p>
+
+
+          <div class="plan-image-wrap">
+
+            <img
+              src="img/plan-impulso.png"
+              alt="Plan Impulso"
+            >
+
           </div>
+
+
+          <div class="plan-content">
+
+            <span>
+              Plan 02
+            </span>
+
+
+            <h3>
+              Plan Impulso
+            </h3>
+
+
+            <p>
+              Publicidad, reels y diseño para darle más fuerza a tu marca.
+            </p>
+
+          </div>
+
+
         </article>
+
+
+
+        <!-- PLAN 3 -->
 
         <article class="plan-card">
-          <div class="plan-image-wrap"><img src="img/plan-diseno-grafico.png" alt="Plan Diseño Gráfico"></div>
-          <div class="plan-content">
-            <span>Plan 03</span>
-            <h3>Diseño Gráfico</h3>
-            <p>Flyers, identidad y piezas visuales para redes y comunicación.</p>
+
+
+          <div class="plan-image-wrap">
+
+            <img
+              src="img/plan-diseno-grafico.png"
+              alt="Plan Diseño Gráfico"
+            >
+
           </div>
+
+
+          <div class="plan-content">
+
+            <span>
+              Plan 03
+            </span>
+
+
+            <h3>
+              Diseño Gráfico
+            </h3>
+
+
+            <p>
+              Flyers, identidad y piezas visuales para redes y comunicación.
+            </p>
+
+          </div>
+
+
         </article>
+
+
       </div>
+
     </section>
 
-    <section class="contact-panel" id="contacto">
-      <div class="contact-logo"><img src="img/logo-ar.webp" alt="AR Creaciones"></div>
+
+
+    <!-- =====================================================
+         CONTACTO
+    ====================================================== -->
+
+    <section
+      class="contact-panel"
+      id="contacto"
+    >
+
+
+      <div class="contact-logo">
+
+        <img
+          src="img/logo-ar.webp"
+          alt="AR Creaciones"
+        >
+
+      </div>
+
+
+
       <div>
-        <p class="section-kicker">¿Tenés una idea?</p>
-        <h2>Hagamos algo<br>que no pase desapercibido.</h2>
+
+        <p class="section-kicker">
+          ¿Tenés una idea?
+        </p>
+
+
+        <h2>
+
+          Hagamos algo
+          <br>
+
+          que no pase desapercibido.
+
+        </h2>
+
       </div>
+
+
+
       <div class="contact-actions">
-        <a class="primary-button" href="https://wa.me/5493513766634" target="_blank" rel="noopener noreferrer">
-          <span>Escribinos</span>
-          <span class="button-orb"><i class="fa-brands fa-whatsapp"></i></span>
+
+
+        <a
+          class="primary-button"
+          href="https://wa.me/5493513766634"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <span>
+            Escribinos
+          </span>
+
+
+          <span class="button-orb">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+          </span>
+
         </a>
-        <a href="https://www.instagram.com/ar_creacionesok" target="_blank" rel="noopener noreferrer">@ar_creacionesok</a>
+
+
+
+        <a
+          href="https://www.instagram.com/ar_creacionesok"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @ar_creacionesok
+        </a>
+
+
       </div>
+
+
     </section>
+
+
   </main>
 
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
   <footer>
-    <p>© AR Creaciones</p>
+
+
+    <p>
+      © AR Creaciones
+    </p>
+
+
+
     <div>
-      <a href="https://www.instagram.com/ar_creacionesok" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://www.facebook.com/ar.creacionesok/" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://wa.me/5493513766634" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+
+      <a
+        href="https://www.instagram.com/ar_creacionesok"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
+
+
+      <a
+        href="https://www.facebook.com/ar.creacionesok/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Facebook
+      </a>
+
+
+      <a
+        href="https://wa.me/5493513766634"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WhatsApp
+      </a>
+
+
     </div>
+
+
   </footer>
 
-  <script src="assets/ariana/rig-config.js" defer></script>
-  <script src="assets/ariana/rig.js" defer></script>
-  <script src="interaction.js" defer></script>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <!-- Configuración Rig -->
+  <script
+    src="assets/ariana/rig-config.js"
+    defer
+  ></script>
+
+
+  <!-- Rig Ariana -->
+  <script
+    src="assets/ariana/rig.js"
+    defer
+  ></script>
+
+
+  <!-- Interacciones generales -->
+  <script
+    src="interaction.js"
+    defer
+  ></script>
+
+
 </body>
+
 </html>
