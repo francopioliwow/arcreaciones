@@ -15,7 +15,8 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--bg); }
+html { background: var(--bg); scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 24px; }
 body {
   margin: 0;
   min-width: 320px;
@@ -28,7 +29,7 @@ body {
   overflow-x: hidden;
 }
 
-body::selection { background: var(--pink); color: #170616; }
+::selection { background: var(--pink); color: #170616; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -93,10 +94,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   position: relative;
   min-height: 100svh;
   isolation: isolate;
-  display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(500px, 1.1fr);
-  align-items: center;
-  gap: clamp(20px, 3vw, 60px);
+  display: block;
   padding: 130px clamp(22px, 5vw, 82px) 54px;
   overflow: hidden;
   background:
@@ -197,15 +195,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-note strong { color: #cfc2d6; }
 .note-line { width: 42px; height: 1px; background: linear-gradient(90deg, var(--pink), transparent); }
 
-.hero-character {
-  position: relative;
-  align-self: stretch;
-  min-height: 720px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  perspective: 1200px;
-}
+
 
 .character-halo {
   position: absolute;
@@ -306,8 +296,7 @@ footer a:hover { color: #dca0ff; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 @media (max-width: 1180px) {
-  .hero { grid-template-columns: minmax(0, 1fr) minmax(420px, .9fr); }
-  .hero-character { min-height: 640px; }
+  
 
   .floating-card { right: -22px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -320,10 +309,10 @@ footer a:hover { color: #dca0ff; }
   .nav-links { display: none; }
   .brand { width: 102px; }
   .brand img { height: 58px; }
-  .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 116px; padding-bottom: 0; }
+  .hero { min-height: auto; padding-top: 116px; padding-bottom: 0; }
   .hero-copy { max-width: 720px; }
   .hero h1 { font-size: clamp(3rem, 11vw, 5.7rem); }
-  .hero-character { min-height: 620px; margin-top: 4px; }
+  
 
   .floating-note-top { top: 18%; right: 4%; }
   .floating-card { right: 4%; bottom: 21%; }
@@ -350,7 +339,7 @@ footer a:hover { color: #dca0ff; }
   .service-chips { gap: 6px; }
   .service-chips span { font-size: .72rem; padding-inline: 10px; }
   .hero-note { display: none; }
-  .hero-character { min-height: 500px; margin-left: -15px; margin-right: -15px; }
+  
 
   .character-ring { width: 320px; top: 27%; right: -13%; }
   .floating-note-top { display: none; }
@@ -385,405 +374,106 @@ footer a:hover { color: #dca0ff; }
   .plan-card-main:hover { transform: perspective(1100px) translateY(15px) rotateX(var(--card-rx, 0deg)) rotateY(var(--card-ry, 0deg)); }
 }
 
-/* =====================================================
-   HERO - NUEVA ESTRUCTURA
-===================================================== */
-
-.hero {
-  position: relative;
-  min-height: calc(100vh - 86px);
-  overflow: hidden;
-  padding: 70px 4vw 40px;
-}
-
-/* Las dos columnas principales */
+/* Distribución única del inicio: texto + personaje. */
 .hero-layout {
   position: relative;
   z-index: 5;
-
-  width: 100%;
-  max-width: 1680px;
-  min-height: calc(100vh - 190px);
-
-  margin: 0 auto;
-
   display: grid;
-  grid-template-columns: minmax(520px, 0.92fr) minmax(520px, 1.08fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-  gap: 40px;
-}
-
-
-/* =====================================================
-   IZQUIERDA
-===================================================== */
-
-.hero-copy {
-  position: relative;
-  z-index: 10;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-
-/* TÍTULO */
-
-.hero-copy h1 {
-  position: relative;
-
-  margin: 0;
-
-  max-width: 780px;
-
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(4.6rem, 6.4vw, 8.4rem);
-  line-height: 0.91;
-  letter-spacing: -0.075em;
-
-  font-weight: 800;
-
-  color: #f5f1f7;
-}
-
-.hero-copy h1 span,
-.hero-copy h1 em {
-  display: block;
-}
-
-.hero-copy h1 span {
-  color: #f5f1f7;
-}
-
-.hero-copy h1 em {
-  margin-top: 10px;
-
-  font-style: normal;
-
-  background: linear-gradient(
-    90deg,
-    #f2b8ff 0%,
-    #df75f3 42%,
-    #d84ce5 100%
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-
-/* TEXTO GRIS — AHORA QUEDA ABAJO DEL TÍTULO */
-
-.hero-lead {
-  position: relative !important;
-
-  top: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-
+  gap: clamp(24px, 3vw, 52px);
   width: 100%;
-  max-width: 650px;
-
-  margin: 32px 0 0;
-
-  font-size: clamp(1rem, 1.1vw, 1.2rem);
-  line-height: 1.75;
-
-  color: rgba(245, 241, 247, 0.68);
+  max-width: 1540px;
+  margin-inline: auto;
 }
-
-
-/* CHIPS */
-
-.service-chips {
-  position: relative !important;
-
-  top: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  margin-top: 30px;
-}
-
-
-/* NOTA */
-
-.hero-note {
-  position: relative !important;
-
-  top: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-
-  display: flex;
-  align-items: flex-start;
-
-  gap: 18px;
-
-  max-width: 500px;
-
-  margin-top: 28px;
-}
-
-
-/* =====================================================
-   ARIANA
-===================================================== */
-
+.hero-copy { min-width: 0; }
+.hero h1 { font-size: clamp(3.3rem, 5.8vw, 6.5rem); }
 .hero-character {
-  position: relative !important;
-
-  top: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-
-  transform: none !important;
-
-  width: 100%;
-  height: min(780px, 78vh);
-  min-height: 610px;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-
-  align-self: end;
-
-  z-index: 6;
-}
-
-
-/* CONTENEDOR DEL RIG */
-
-.ariana-scene {
   position: relative;
-
-  width: min(100%, 700px);
-  height: 100%;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-
-/* PERSONAJE */
-
-.ariana-stage {
-  position: relative;
-
+  min-width: 0;
   width: 100%;
-  height: 100%;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  isolation: isolate;
+}
+/* El alto deriva de la proporción del rig, no de alturas fijas del viewport. */
+.hero-character .ariana-scene {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  flex: 0 1 auto;
+  display: block;
+  z-index: 3;
+}
+.hero-character .ariana-stage {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1000 / 1180;
+  margin: 0;
   padding: 0;
   border: 0;
   background: transparent;
-
+}
+.hero-character .ariana-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  transform: none;
+}
+/* Corresponde al origen (45,25) y ancho 900 del lienzo 1000 × 1180. */
+.hero-character .ariana-fallback {
+  position: absolute;
+  left: 4.5%;
+  top: 2.119%;
+  right: auto;
+  bottom: auto;
+  width: 90%;
+  height: auto;
+  transform: none;
+}
+.hero-character .ariana-controls {
+  position: relative;
   display: flex;
-  align-items: flex-end;
+  flex-wrap: wrap;
   justify-content: center;
-
-  cursor: pointer;
+  gap: 8px 13px;
+  min-height: 64px;
+  margin: 0;
+  padding: 8px 4px 12px;
 }
+.hero-character .floating-card { right: 0; bottom: 25%; }
+.hero-character .signature-note { right: 2%; bottom: 15%; }
+.character-ring { width: min(80%, 430px); }
+.note-line { flex-shrink: 0; margin-top: .65em; }
 
-
-/*
-  IMPORTANTE:
-  dejamos que tanto la imagen fallback como el canvas
-  ocupen exactamente el mismo espacio.
-*/
-
-.ariana-fallback,
-.ariana-canvas {
-  position: absolute;
-
-  left: 50%;
-  bottom: 0;
-
-  width: auto;
-  height: min(760px, 76vh);
-  max-width: none;
-
-  transform: translateX(-50%);
-
-  object-fit: contain;
-  object-position: center bottom;
+@media (max-width: 1100px) and (min-width: 901px) {
+  .hero h1 { font-size: clamp(3rem, 5.5vw, 4rem); }
+  .hero-character .floating-card { padding: 10px; gap: 8px; }
+  .hero-character .signature-note { display: none; }
 }
-
-
-/* Si el rig activa el canvas, ambos quedan perfectamente superpuestos */
-
-.ariana-canvas {
-  z-index: 2;
-}
-
-.ariana-fallback {
-  z-index: 1;
-}
-
-
-/* =====================================================
-   ELEMENTOS FLOTANTES
-===================================================== */
-
-.floating-note-top {
-  position: absolute;
-  top: 24%;
-  right: 5%;
-  z-index: 10;
-}
-
-.floating-card {
-  position: absolute;
-  right: 0;
-  bottom: 20%;
-  z-index: 10;
-}
-
-.signature-note {
-  position: absolute;
-  right: 6%;
-  bottom: 8%;
-  z-index: 10;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1200px) {
-
-  .hero {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-
-  .hero-layout {
-    grid-template-columns: minmax(430px, 1fr) minmax(400px, 0.9fr);
-    gap: 10px;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(4rem, 7vw, 6.5rem);
-  }
-
-  .hero-character {
-    height: 680px;
-    min-height: 560px;
-  }
-
-  .ariana-fallback,
-  .ariana-canvas {
-    height: min(650px, 68vh);
-  }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
 @media (max-width: 900px) {
-
-  .hero {
-    min-height: auto;
-    padding: 55px 22px 0;
-    overflow: hidden;
-  }
-
-  .hero-layout {
-    display: flex;
-    flex-direction: column;
-
-    min-height: auto;
-
-    gap: 25px;
-  }
-
-  .hero-copy {
-    width: 100%;
-  }
-
-  .hero-copy h1 {
-    max-width: 100%;
-
-    font-size: clamp(3.5rem, 14vw, 6rem);
-  }
-
-  .hero-lead {
-    max-width: 600px;
-    margin-top: 25px;
-  }
-
-  .service-chips {
-    margin-top: 24px;
-  }
-
-  .hero-note {
-    margin-top: 24px;
-  }
-
-  .hero-character {
-    width: 100%;
-    height: 620px;
-    min-height: 0;
-
-    margin-top: 5px;
-
-    align-self: center;
-  }
-
-  .ariana-fallback,
-  .ariana-canvas {
-    height: 610px;
-  }
+  .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .hero-copy { width: 100%; max-width: 720px; margin-inline: auto; }
+  .hero h1 { font-size: clamp(3rem, 8.6vw, 5.4rem); }
+  .hero-character { max-width: 650px; margin: 0 auto; }
+  .hero-character .ariana-scene { max-width: 100%; }
+  .hero-character .ariana-controls { margin-bottom: 12px; }
+}
+@media (max-width: 640px) {
+  .hero { padding-top: 112px; }
+  .hero h1 { font-size: clamp(2.55rem, 10.4vw, 4.15rem); line-height: .98; }
+  .hero-lead { margin-top: 24px; }
+  .hero-character .ariana-controls { flex-direction: column; }
+  .hero-character .floating-card, .hero-character .signature-note { display: none; }
+  .character-ring { right: 4%; }
+  .contact-actions, .contact-panel > div { min-width: 0; }
+  .contact-panel h2 { font-size: clamp(1.9rem, 8.5vw, 2.7rem); }
 }
 
-
-/* =====================================================
-   MOBILE CHICO
-===================================================== */
-
-@media (max-width: 560px) {
-
-  .hero {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(3.2rem, 15vw, 4.7rem);
-    line-height: 0.93;
-  }
-
-  .hero-lead {
-    font-size: 0.98rem;
-    line-height: 1.65;
-  }
-
-  .hero-character {
-    height: 510px;
-  }
-
-  .ariana-fallback,
-  .ariana-canvas {
-    height: 500px;
-  }
-
-  .floating-card,
-  .signature-note {
-    display: none;
-  }
-}
