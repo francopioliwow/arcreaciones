@@ -1,0 +1,49 @@
+.ariana-scene { position: relative; width: min(50vw, 790px); max-width: 112%; flex: 0 0 auto; z-index: 3; }
+.ariana-stage { display: block; position: relative; width: 100%; aspect-ratio: 1000 / 1180; margin: 0; padding: 0; border: 0; border-radius: 32px; color: inherit; background: transparent; cursor: pointer; touch-action: pan-y; -webkit-user-select: none; user-select: none; }
+.ariana-stage:focus-visible { outline: 2px solid var(--pink-soft); outline-offset: -12px; }
+.ariana-stage:disabled { cursor: default; }
+.ariana-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
+.ariana-fallback { position: absolute; left: 4.5%; top: 2.119%; width: 90%; height: auto; pointer-events: none; }
+.ariana-stage.is-ready .ariana-canvas { opacity: 1; }
+.ariana-stage.is-ready .ariana-fallback { visibility: hidden; }
+.ariana-controls { min-height: 64px; margin: -9px auto 0; padding: 8px 14px 14px; display: flex; align-items: center; justify-content: center; gap: 13px; position: relative; z-index: 15; }
+.ariana-controls p { margin: 0; font-size: .71rem; color: #bca7c9; letter-spacing: .015em; }
+.ariana-controls > div { display: flex; gap: 5px; flex-shrink: 0; }
+.ariana-controls button { font: inherit; font-size: .71rem; min-height: 38px; padding: 5px 12px; color: #eed8fc; background: #26132e; border: 1px solid #b675d42e; border-radius: 999px; cursor: pointer; }
+.ariana-controls button:hover { background: #3b1b45; border-color: #e2a6ff70; }
+.ariana-controls button:focus-visible { outline: 2px solid var(--pink-soft); outline-offset: 3px; }
+.ariana-controls button:disabled { opacity: .4; cursor: default; }
+.ariana-controls button[hidden] { display: none; }
+#arianaPause { color: #bda4c9; background: transparent; border-color: transparent; }
+.ariana-noscript { color: #bca7c9; text-align: center; font-size: .75rem; }
+.hero-character .floating-card, .hero-character .floating-note, .hero-character .signature-note { pointer-events: none; }
+.hero-character .floating-card { right: -10px; bottom: 22%; }
+.hero-character .signature-note { bottom: 14%; }
+.rig-bones { position: absolute; inset: 0; height: 100%; width: 100%; pointer-events: none; overflow: visible; }
+.rig-bones[hidden] { display: none; }
+.rig-bones path { stroke: #7dfbd0; stroke-width: 2; fill: none; stroke-dasharray: 6 5; }
+.rig-bones circle { stroke: #fff; stroke-width: 2; fill: #4c148e; }
+.rig-bones text { fill: white; font: 16px system-ui; paint-order: stroke; stroke: #120519; stroke-width: 4px; }
+.rig-inspector { position: fixed; top: 100px; left: 16px; width: 238px; z-index: 200; max-height: calc(100svh - 116px); overflow-y: auto; color: #eee; background: #130d1af2; border: 1px solid #78498a; border-radius: 16px; padding: 18px; font: 12px/1.5 system-ui; backdrop-filter: blur(15px); }
+.rig-inspector strong { font-size: 16px; }
+.rig-inspector p { color: #bca7c9; }
+.rig-inspector label { display: flex; align-items: center; gap: 7px; min-height: 30px; }
+.rig-inspector input { accent-color: #d995fc; }
+.rig-presets { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin: 14px 0; }
+.rig-presets button { padding: 9px 3px; border: 1px solid #78498a; border-radius: 7px; background: #2a1636; color: white; cursor: pointer; }
+.rig-inspector small { display: block; color: #bca7c9; }
+@media (max-width:1180px) { .ariana-scene { width: min(52vw,690px); } }
+@media (min-width:901px) { .hero-character { align-items: center; } }
+@media (max-width:900px) {
+  .ariana-scene { width: min(92vw,670px); max-width: 100%; }
+  .hero-character { min-height: 0; margin-top: 18px; }
+  .ariana-controls { margin-top: -2px; margin-bottom: 20px; }
+}
+@media (max-width:640px) {
+  .ariana-scene { width: 100%; max-width: 100%; }
+  .hero-character { min-height: 0; margin-top: 18px; }
+  .ariana-controls { flex-direction: column; gap: 5px; padding-top: 4px; }
+  .ariana-controls button { min-height: 44px; }
+  .hero-character .floating-card { display: none; }
+  .rig-inspector { top: auto; bottom: 8px; left: 8px; width: 200px; max-height: 40svh; }
+}
